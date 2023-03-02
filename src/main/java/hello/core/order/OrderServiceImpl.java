@@ -10,13 +10,14 @@ public class OrderServiceImpl implements OrderService{
 
 
     MemberRepository memberRepository;
+    DiscountPolicy discountPolicy;
 
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
 
-    DiscountPolicy discountPolicy;
+
 
 
     @Override
