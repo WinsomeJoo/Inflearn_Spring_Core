@@ -5,10 +5,12 @@ import hello.core.discount.FixDiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService{
 
     /**필드 주입 사용하지 않는 것을 추천**/
@@ -16,15 +18,16 @@ public class OrderServiceImpl implements OrderService{
     private final DiscountPolicy discountPolicy;
 
     /**생성자 주입**/
-     @Autowired //생성자가 하나있을 때는 @Autowired를 생략할 수 있음
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+     //@Autowired //생성자가 하나있을 때는 @Autowired를 생략할 수 있음
+    //public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         //System.out.println("memberRepository = " + memberRepository);
         //System.out.println("discountPolicy = " + discountPolicy);   <-- 값들이 잘 들어왔는지 확인하기 위해서
-        this.memberRepository = memberRepository;
-        this.discountPolicy = discountPolicy;
+        //this.memberRepository = memberRepository;
+        //this.discountPolicy = discountPolicy;
+   // }
 
-    }
     /**수정자 주입**/
+
 //    @Autowired
 //    public void setMemberRepository(MemberRepository memberRepository){
 //        //System.out.println("memberRepository = " + memberRepository);
