@@ -24,8 +24,11 @@ public class AllBeanTest {
         Member member = new Member(1L, "userA", Grade.VIP);
         int discountPrice =discountService.discount(member,10000,"fixDiscountPolicy");
 
+        int rateDiscountPrice =discountService.discount(member,20000,"rateDiscountPolicy");
+
         Assertions.assertThat(discountService).isInstanceOf(DiscountService.class);
         Assertions.assertThat(discountPrice).isEqualTo(1000);
+        Assertions.assertThat(rateDiscountPrice).isEqualTo(2000);
     }
 
     static class DiscountService{
